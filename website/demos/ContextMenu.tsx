@@ -118,7 +118,11 @@ function rowKeyGetter(row: Row) {
 
 function RowRenderer(props: RowRendererProps<Row>) {
   return (
-    <ContextMenuTrigger id="grid-context-menu" collect={() => ({ rowIdx: props.rowIdx })}>
+    <ContextMenuTrigger
+      holdToDisplay={-1}
+      id="grid-context-menu"
+      collect={() => ({ rowIdx: props.rowIdx })}
+    >
       <GridRow {...props} />
     </ContextMenuTrigger>
   );
